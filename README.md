@@ -3,4 +3,4 @@
 
 
 Algorithm used :
-Dijkstra for resolving
+Dijkstra for resolving shortest paths

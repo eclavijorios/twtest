@@ -1,3 +1,7 @@
+repositories {
+    mavenCentral()
+}
+
 apply plugin: 'idea'
 apply plugin: 'java'
 
@@ -6,6 +10,33 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-repositories {
-    mavenCentral()
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+    }
+}
+
+
+test {
+    afterTest { test, result ->
+        println "Test: ${test.name} [${test.className}] : ${result.resultType}"
+    }
+}
+
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'main.Application'
+        )
+    }
 }
