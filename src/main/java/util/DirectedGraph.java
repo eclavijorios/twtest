@@ -26,7 +26,7 @@ public class DirectedGraph<T> {
 
         public GraphNode(T data) {
             this.data = data;
-            this.neighbours = new HashMap<T, Integer>();
+            this.neighbours = new HashMap<>();
         }
 
         public T getData() {
@@ -143,7 +143,7 @@ public class DirectedGraph<T> {
         }
 
 
-        public int hopCount() {
+        public int jumpCount() {
             return Math.max(0, this.nodes.size() - 1);
         }
 
@@ -345,24 +345,24 @@ public class DirectedGraph<T> {
     }
 
 
-    public int countRoutesWithMaxHops(T start, T destination, int maxHops) {
+    public int countRoutesWithMaxHops(T start, T destination, int maxJumps) {
         validateInputNodes(start, destination);
 
         return countPaths(start, (p) -> {
-            return p.hopCount() > maxHops;
+            return p.jumpCount() > maxJumps;
         }, (p) -> {
             return destination.equals(p.last());
         });
     }
 
 
-    public int countRoutesWithHops(T start, T destination, int hops) {
+    public int countRoutesWithHops(T start, T destination, int jumps) {
         validateInputNodes(start, destination);
 
         return countPaths(start, (p) -> {
-            return p.hopCount() > hops;
+            return p.jumpCount() > jumps;
         }, (p) -> {
-            return destination.equals(p.last()) && p.hopCount() == hops;
+            return destination.equals(p.last()) && p.jumpCount() == jumps;
         });
     }
 

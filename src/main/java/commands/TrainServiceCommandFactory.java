@@ -25,7 +25,7 @@ public class TrainServiceCommandFactory implements CommandFactory {
 
     @Override
     public Command createCommand(String input) {
-        String[] parts = input.split(";");
+        String[] parts = input.split(",");
 
         if (parts.length <= 1) {
             throw new IllegalArgumentException("Invalid Input format, Read .md file.");
@@ -53,7 +53,7 @@ public class TrainServiceCommandFactory implements CommandFactory {
     }
 
     private ShortestPath createShortestPathCommand(String input) {
-        String[] parts = input.split(";");
+        String[] parts = input.split(",");
 
         if (parts.length < 3 || parts.length > 3) {
             throw new IllegalArgumentException("wrong input format");
@@ -68,7 +68,7 @@ public class TrainServiceCommandFactory implements CommandFactory {
     }
 
     private ShortestPathLength createShortestPathLengthCommand(String input) {
-        String[] parts = input.split(";");
+        String[] parts = input.split(",");
 
         if (parts.length < 3 || parts.length > 3) {
             throw new IllegalArgumentException("wrong input format");
@@ -83,7 +83,7 @@ public class TrainServiceCommandFactory implements CommandFactory {
     }
 
     private Distance createDistanceCommand(String input) {
-        String[] parts = input.split(";");
+        String[] parts = input.split(",");
 
         if (parts.length < 2) {
             throw new IllegalArgumentException("wrong input format");
@@ -99,7 +99,7 @@ public class TrainServiceCommandFactory implements CommandFactory {
 
 
     private CountRouteWithMaxJumps createCountRouteWithMaxJumps(String input) {
-        String[] parts = input.split(";");
+        String[] parts = input.split(",");
 
         if (parts.length < 4 || parts.length > 4) {
             throw new IllegalArgumentException("wrong input format");
@@ -121,7 +121,7 @@ public class TrainServiceCommandFactory implements CommandFactory {
 
 
     private CountRouteWithJumps createCountRouteWithJumps(String input) {
-        String[] parts = input.split(";");
+        String[] parts = input.split(",");
 
         if (parts.length < 4 || parts.length > 4) {
             throw new IllegalArgumentException("wrong input format");
@@ -142,7 +142,7 @@ public class TrainServiceCommandFactory implements CommandFactory {
     }
 
     private CountRouteWithMaxDistance createCountRouteWithMaxDistance(String input) {
-        String[] parts = input.split(";");
+        String[] parts = input.split(",");
 
         if (parts.length < 4 || parts.length > 4) {
             throw new IllegalArgumentException("wrong input format");
