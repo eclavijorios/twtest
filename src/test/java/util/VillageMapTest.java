@@ -39,11 +39,11 @@ public class VillageMapTest {
 
     @Test
     public void testParseInput2() {
-        int ans = map.countRoutesWithHops("A", "C", 4);
+        int ans = map.countRoutesWitJumps("A", "C", 4);
         assertEquals(3, ans);
 
         map.parseInput("AC1");
-        ans = map.countRoutesWithHops("A", "C", 4);
+        ans = map.countRoutesWitJumps("A", "C", 4);
         assertEquals(4, ans);
     }
 

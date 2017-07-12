@@ -132,7 +132,7 @@ public class TrainServiceCommandFactory implements CommandFactory {
             command.setDestination(parts[2]);
 
             try {
-                command.setHops(Integer.parseInt(parts[3]));
+                command.setJumps(Integer.parseInt(parts[3]));
             } catch (NumberFormatException e) {
                 throw new IllegalArgumentException("wrong input format");
             }

@@ -1,5 +1,10 @@
 # twtest
 
+**Requires**
+
+- JDK 1.8
+- Gradle
+
 **Usage:**
 navigate to  project path,
 

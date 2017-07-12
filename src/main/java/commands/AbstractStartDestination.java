@@ -3,12 +3,12 @@ package commands;
 
 import service.TrainService;
 
-public abstract class AbstractStartDestinationCommand extends AbstractTrainServiceCommand {
+public abstract class AbstractStartDestination extends AbstractTrainService {
 
     protected String start;
     protected String destination;
 
-    public AbstractStartDestinationCommand(TrainService service) {
+    public AbstractStartDestination(TrainService service) {
         super(service);
     }
 

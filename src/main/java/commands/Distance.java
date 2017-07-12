@@ -2,7 +2,7 @@ package commands;
 
 import service.TrainService;
 
-public class Distance extends AbstractStartDestinationCommand {
+public class Distance extends AbstractStartDestination {
     private String[] villageNames;
 
 

@@ -21,8 +21,8 @@ public class VillageMapImpl implements VillageMap {
 
 
     public VillageMapImpl() {
-        graph = new DirectedGraph<Village>();
-        villages = new HashMap<String, Village>();
+        graph = new DirectedGraph<>();
+        villages = new HashMap<>();
     }
 
 
@@ -118,13 +118,13 @@ public class VillageMapImpl implements VillageMap {
 
 
     @Override
-    public int countRoutesWithMaxHops(String start, String destination, int maxHops) {
-        return graph.countRoutesWithMaxHops(villages.get(start), villages.get(destination), maxHops);
+    public int countRoutesWithMaxJumps(String start, String destination, int maxJumps) {
+        return graph.countRoutesWithMaxHops(villages.get(start), villages.get(destination), maxJumps);
     }
 
     @Override
-    public int countRoutesWithHops(String start, String destination, int hops) {
-        return graph.countRoutesWithHops(villages.get(start), villages.get(destination), hops);
+    public int countRoutesWitJumps(String start, String destination, int jumps) {
+        return graph.countRoutesWithHops(villages.get(start), villages.get(destination), jumps);
     }
 
     @Override

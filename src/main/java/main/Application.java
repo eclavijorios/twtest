@@ -15,7 +15,7 @@ public class Application {
 
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.err.println("please give proper path to: graph.txt commands.txt");
+            System.err.println("wrong number of params , please give path to: graph.txt, commands.txt");
             System.exit(1);
         } else {
             String graphFilePath = args[0];

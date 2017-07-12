@@ -3,11 +3,11 @@ package commands;
 
 import service.TrainService;
 
-public abstract class AbstractTrainServiceCommand implements Command {
+public abstract class AbstractTrainService implements Command {
 
      private TrainService receiver;
 
-    public AbstractTrainServiceCommand(TrainService service){
+    public AbstractTrainService(TrainService service){
         this.receiver = service;
     }
 

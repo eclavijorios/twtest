@@ -3,7 +3,7 @@ package commands;
 
 import service.TrainService;
 
-public class CountRouteWithMaxDistance extends AbstractStartDestinationCommand {
+public class CountRouteWithMaxDistance extends AbstractStartDestination {
     private int maxDistance;
 
     public CountRouteWithMaxDistance(TrainService service) {

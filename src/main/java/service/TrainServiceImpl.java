@@ -38,12 +38,12 @@ public class TrainServiceImpl implements TrainService{
 
     @Override
     public int countRoutesWithMaxJumps(String start, String destination, int maxJumps) {
-        return map.countRoutesWithMaxHops(start, destination, maxJumps);
+        return map.countRoutesWithMaxJumps(start, destination, maxJumps);
     }
 
     @Override
     public int countRoutesWithJumps(String start, String destination, int jumps) {
-        return map.countRoutesWithHops(start, destination, jumps);
+        return map.countRoutesWitJumps(start, destination, jumps);
     }
 
     @Override

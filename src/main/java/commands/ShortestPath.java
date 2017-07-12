@@ -3,7 +3,7 @@ package commands;
 
 import service.TrainService;
 
-public class ShortestPath extends AbstractStartDestinationCommand {
+public class ShortestPath extends AbstractStartDestination {
 
 
 

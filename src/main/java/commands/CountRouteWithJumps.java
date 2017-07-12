@@ -3,21 +3,21 @@ package commands;
 
 import service.TrainService;
 
-public class CountRouteWithJumps extends AbstractStartDestinationCommand {
+public class CountRouteWithJumps extends AbstractStartDestination {
 
-    private int hops;
+    private int jumps;
 
 
     public CountRouteWithJumps(TrainService service) {
         super(service);
     }
 
-    public void setHops(int hops) {
-        this.hops = hops;
+    public void setJumps(int jumps) {
+        this.jumps = jumps;
     }
 
     @Override
     public Integer execute() {
-        return getReceiver().countRoutesWithJumps(start, destination, hops);
+        return getReceiver().countRoutesWithJumps(start, destination, jumps);
     }
 }

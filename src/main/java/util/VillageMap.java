@@ -17,9 +17,9 @@ public interface VillageMap {
 
     int distance(String... VillagesNames) throws VillageMapImpl.NoSuchRouteException;
 
-    int countRoutesWithMaxHops(String start, String destination, int maxHops);
+    int countRoutesWithMaxJumps(String start, String destination, int maxJumps);
 
-    int countRoutesWithHops(String start, String destination, int hops);
+    int countRoutesWitJumps(String start, String destination, int jumps);
 
     int countRoutesWithMaxDistance(String start, String destination, int maxDistance);
 
