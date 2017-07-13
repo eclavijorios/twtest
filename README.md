@@ -17,19 +17,23 @@ if it's needed, to change the graph or the commands:
 
 to run the app(once build)
 
-```java -jar build/libs/Trains.jar src/main/resources/graph.txt src/main/resources/commands.txt```
+```java -jar build/libs/Trains_java.jar src/main/resources/graph.txt src/main/resources/commands.txt```
 
-Algorithm used :
+**Quick overview of the application:**
+This application was modeled using following algorithms;
+
 Dijkstra for resolving shortest paths
 DSF (Depth First Traversal) for exploring the graph
 
-**Quick overview of the application:**
+Applying SOLID(Uncle Bob's) principles for Object Oriented Design,i used command to encapsulate each command request to objects and make object oriented callback decoupling the invocation of the command from the implementation  , i used the command processor because in case of extending this program(to services)  we don't want to make any client of this service to update it's client for commads they dont use, they should only know the ```execute()``
+
+
 
 Main package contain application main method that runs the given commands in ```Commands.txt``` passed as argument in the program execution line, it also receives the graph itself in the ```Graph.txt```.
 
-Under commands package you cand find implementation of command design patter and command procesor design pattern used to handle this last one is used to handle and schedule the implemented command by the command patter such like : ```CountRouteWithJumps.java``` , ```CountRouteWithMaxDistance.java```,```CountRouteWithMaxJumps.java```,```Distance.java```,```ShortestPath.java```and ```ShortestPathLength.java``` ,in this way is extendable to N numbers of command that just needs to be implemented 
+Under commands package you cand find implementation of command design patter and command processor design pattern , this one is used to handle and schedule the implemented command by the command pattern such like : ```CountRouteWithJumps.java``` , ```CountRouteWithMaxDistance.java```,```CountRouteWithMaxJumps.java```,```Distance.java```,```ShortestPath.java```and ```ShortestPathLength.java``` ,in this way is extensible to N numbers of command that just needs to be implemented
 
-Command processor is the one who executes this commands instantiated by the Train service command factory wich will create this each time based on the commmand that are being passed as input on each command creation, spliting the command input into proper attributes for the above mentioned "command creation".
+Command processor is the one who executes this commands instantiated by the Train service command factory which will create this each time based on the command that are being passed as input on each command creation, spliting the command input into proper attributes for the above mentioned "command creation".
 
 ```AbstractStartDestination.java``` (that contains the start/destination and the service) is extending ```AbstractTrainService.java``` ( wich implements the ```Command.java``` class and containt the receiver for the command pattern and the service) are extended by the commands mentioned above
 
