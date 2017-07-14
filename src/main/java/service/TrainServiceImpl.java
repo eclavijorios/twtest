@@ -12,12 +12,14 @@ public class TrainServiceImpl implements TrainService{
         this.map = map;
     }
 
+    public final String NO_SUCH_ROUTE = "NO SUCH ROUTE";
     @Override
     public String shortestPathBetween(String start, String destination) {
         try {
             return map.shortestPathBetween(start, destination);
         } catch (VillageMapImpl.NoSuchRouteException e) {
-            throw new TrainServiceException("NO SUCH ROUTE");
+            ;
+            throw new TrainServiceException(NO_SUCH_ROUTE);
         }
     }
     @Override
@@ -25,7 +27,7 @@ public class TrainServiceImpl implements TrainService{
         try {
             return map.lengthOfShortestPathBetween(start, destination);
         } catch (VillageMapImpl.NoSuchRouteException e) {
-            throw new TrainServiceException("NO SUCH ROUTE");
+            throw new TrainServiceException(NO_SUCH_ROUTE);
         }    }
 
     @Override
@@ -33,7 +35,7 @@ public class TrainServiceImpl implements TrainService{
         try {
             return map.distance(villages);
         } catch (VillageMapImpl.NoSuchRouteException e) {
-            throw new TrainServiceException("NO SUCH ROUTE");
+            throw new TrainServiceException(NO_SUCH_ROUTE);
         }    }
 
     @Override

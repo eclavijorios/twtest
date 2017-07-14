@@ -39,8 +39,8 @@ public class VillageMapImpl implements VillageMap {
         if (input.length() < 2) {
             throw new IllegalArgumentException("Invalid input format");
         } else {
-            String start = new String(String.valueOf(input.charAt(0)));
-            String destination = new String(String.valueOf(input.charAt(1)));
+            String start = String.valueOf(input.charAt(0));
+            String destination = String.valueOf(input.charAt(1));
 
             int weight = 0;
 
