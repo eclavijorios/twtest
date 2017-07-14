@@ -19,13 +19,13 @@ to run the app(once build)
 
 ```java -jar build/libs/Trains_java.jar src/main/resources/graph.txt src/main/resources/commands.txt```
 
-**Quick overview of the application:**
+**Quick architecture/overview of the application:**
 This application was modeled using following algorithms;
 
-Dijkstra for resolving shortest paths
-DSF (Depth First Traversal) for exploring the graph
+-Dijkstra for resolving shortest paths
+-DSF (Depth First Traversal) for exploring the graph
 
-Applying SOLID(Uncle Bob's) principles for Object Oriented Design,i used command to encapsulate each command request to objects and make object oriented callback decoupling the invocation of the command from the implementation  , i used the command processor because in case of extending this program(to services)  we don't want to make any client of this service to update it's client for commads they dont use, they should only know the ```execute()``
+Applying SOLID(Uncle Bob's) principles for Object Oriented Design also i used command pattern to encapsulate each command request to objects and make object oriented callback decoupling the invocation of the command from the implementation  , i used the command processor because in case of extending this program(to services or somthing else) we don't want to make any client of this service to update it's client for commands they don't use, they should only know the ```execute()```.
 
 
 
