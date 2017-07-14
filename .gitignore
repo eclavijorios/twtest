@@ -19,6 +19,7 @@ out/
 .java-version
 tmp/
 logs/
+idea/
 
 
 #Jmeter
